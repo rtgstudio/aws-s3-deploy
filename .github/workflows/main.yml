@@ -9,7 +9,10 @@ jobs:
       id: hello
       uses: rtgstudio/aws-s3-deploy@master
       with:
-        who-to-greet: 'Mona the Octocat'
+        bucketName: 'Mona the Octocat'
+        distributionFolder: 'Mona the Octocat'
+        indexDocument: 'Mona the Octocat'
+        errorDocument: 'Mona the Octocat'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"

@@ -1,10 +1,22 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Deploy static files to s3 '
+description: 'Deploy your static files to s3 in record time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  bucketName:
+    description: 'Name of the bucket where files are to be deployed'
     required: true
-    default: 'World'
+  distributionFolder: 
+    description: 'Name of the folder Where build is kept'
+    required: true
+    default: 'build'
+  indexDocument: 
+    description: 'Name of the index Document to set to bucket'
+    required: true
+    default: 'index.html'
+  errorDocument: 
+    description: 'Name of the file to display during error'
+    required: true
+    default: 'error.html'
+
 outputs:
   time: # id of output
     description: 'The time we greeted you'
